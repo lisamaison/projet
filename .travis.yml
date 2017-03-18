@@ -1,5 +1,10 @@
-language : ruby
-
-rvm :
-  - "2.3.0"
-
+language: ruby
+rvm:
+- 2.3.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: eFk9YY73HNpBn2cAtpwwPqrc4Nr7iTAkgIwM6vI6vyncn48zVqxO1jJ6WDfaAWNOlb25rGFFuW40Xxu9/FzNjRMCwV7HvLWZGgT4ptMUYvoJpuyvFJ5YE1MxrO57F8g1xP3iBWjC6aF9haVP7JM5hLOVqO+ujGWsBGoXXkCwzMLGbaLYs8ehRI/HUQF/IVC2kltFb+ao6b0M3ESPYNRMELCfU+fMoskjcP/mzBZbCmL1FmJTquGWbuJdHU+ecjH3L+GdLhXVzwMRYZyOjV/5JWDMjqr+HOtwnP2pAYyeDwWlI5GFIxY4SmqM7D7PuRlKUCl77c3Rx2GVohMcx1ohYYWufzSVLK/mXbG4LbJFDw6MKxBVUUht0QUB3Gt/xaBXk161Pmdsf5ZjEDsVzVmGUkkupcqC/gbTMFG69Jrwmh9YzlYKcX1n9Df/0t85psweiXylh9kEzHYjW6hDEWjH/BARD6NxPLJvbqGZ3IXa2G75TUf8K8RDVaDV6JApshafNIHMLVOaiTrj7QApjVpuwcg53t5EQYi+4QF71kVlAtvhXPKDcppqhS2VEjnOi3dWCj6M7gLp1u5maj/bToeVls8q2iOslkOCMRtGSRf2luBe7kF40kEFO6kr37rnwPEE1kExJ+AXT2vlAcu6fOR+dIBPxm5VxS5utssAX2gJTNI=
+  app: projet1
+  on:
+    repo: lisamaison/projet
