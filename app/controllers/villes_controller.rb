@@ -1,4 +1,4 @@
-class VillEsController < ApplicationController
+class VillesController < ApplicationController
   before_action :set_ville, only: [:show, :edit, :update, :destroy]
 
   # GET /villes
@@ -69,6 +69,6 @@ class VillEsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ville_params
-      params.require(:ville).permit(:Ville, :latitude, :longitude)
+      params.require(:ville).permit(:name, :latitude, :longitude)
     end
 end

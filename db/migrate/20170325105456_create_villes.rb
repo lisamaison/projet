@@ -1,7 +1,7 @@
 class CreateVilles < ActiveRecord::Migration
   def change
     create_table :villes do |t|
-      t.string :Ville
+      t.string :name
       t.float :latitude
       t.float :longitude
 

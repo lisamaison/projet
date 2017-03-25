@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VillEsControllerTest < ActionController::TestCase
+class VillesControllerTest < ActionController::TestCase
   setup do
     @ville = villes(:one)
   end
@@ -18,7 +18,7 @@ class VillEsControllerTest < ActionController::TestCase
 
   test "should create ville" do
     assert_difference('Ville.count') do
-      post :create, ville: { Ville: @ville.Ville, latitude: @ville.latitude, longitude: @ville.longitude }
+      post :create, ville: { latitude: @ville.latitude, longitude: @ville.longitude, name: @ville.name }
     end
 
     assert_redirected_to ville_path(assigns(:ville))
@@ -35,7 +35,7 @@ class VillEsControllerTest < ActionController::TestCase
   end
 
   test "should update ville" do
-    patch :update, id: @ville, ville: { Ville: @ville.Ville, latitude: @ville.latitude, longitude: @ville.longitude }
+    patch :update, id: @ville, ville: { latitude: @ville.latitude, longitude: @ville.longitude, name: @ville.name }
     assert_redirected_to ville_path(assigns(:ville))
   end
 
