@@ -9,7 +9,29 @@ class VillesController < ApplicationController
 
   # GET /villes/1
   # GET /villes/1.json
-  def show
+  def show 
+    forecast = ForecastIO.forecast(@ville.latitude, @ville.longitude)
+    weatherOk = false
+    temperatureOk = false
+    if forecast
+      todayForecast = forecast.currently
+      if todayForecast
+        if todayForecast.summary
+          @weatherSummary = todayForecast.summary
+          weatherOk = true
+        end
+        if todayForecast.temperature
+          @weatherTemperature = toCelsus(todayForecast.temperature)
+          temperatureOk = true
+        end
+      end
+    end
+    if !weatherOk
+      @weatherSummary = "Unavailable"
+    end
+    if !temperatureOk
+      @weatherTemperature = "Unavailable"
+    end
   end
 
   # GET /villes/new
