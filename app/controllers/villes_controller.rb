@@ -37,8 +37,8 @@ class VillesController < ApplicationController
   # GET /villes/new
   def new
     @ville = Ville.new
-  end
-
+  end 
+  
   # GET /villes/1/edit
   def edit
   end
@@ -88,6 +88,15 @@ class VillesController < ApplicationController
     def set_ville
       @ville = Ville.find(params[:id])
     end
+  
+ # Convert Fahrenheit temperature to Celsus temperature
+  def toCelsus(fahrenheitTemperature)
+   if fahrenheitTemperature
+    return (fahrenheitTemperature - 32.0) * 5.0 / 9.0
+  else
+   return nil
+   end
+ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ville_params
