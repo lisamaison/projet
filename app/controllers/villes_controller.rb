@@ -21,7 +21,8 @@ class VillesController < ApplicationController
           weatherOk = true
         end
         if todayForecast.temperature
-          @weatherTemperature = toCelsus(todayForecast.temperature)
+          wheather1 = toCelsus(todayForecast.temperature)
+          @weatherTemperature = wheather1.round(2);
           temperatureOk = true
         end
       end
